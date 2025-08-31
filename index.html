@@ -31,6 +31,7 @@
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            position: relative;
         }
         
         .header {
@@ -119,6 +120,16 @@
             margin-bottom: 12px;
             font-size: 14px;
             line-height: 1.5;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .location:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
         }
         
         .location:last-child {
@@ -247,6 +258,71 @@
             text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
         
+        .share-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .share-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .share-tooltip {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+            width: 200px;
+        }
+        
+        .share-tooltip.show {
+            display: flex;
+        }
+        
+        .share-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #5c4122;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .share-option:hover {
+            background: #f5f5f5;
+        }
+        
+        .share-option i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
         @media (max-width: 500px) {
             .container {
                 border-radius: 15px;
@@ -300,11 +376,32 @@
             .slogan span {
                 font-size: 16px;
             }
+            
+            .share-tooltip {
+                width: 180px;
+                right: -10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <button class="share-button" onclick="toggleShareTooltip()">
+            <i class="fas fa-share-alt"></i>
+        </button>
+        
+        <div class="share-tooltip" id="shareTooltip">
+            <a href="#" class="share-option" onclick="copyLink()">
+                <i class="fas fa-link"></i> Copiar enlace
+            </a>
+            <a href="whatsapp://send?text=Visita Peru Sucre Bakery & Coffee: https://ejemplo.com" class="share-option">
+                <i class="fab fa-whatsapp"></i> Compartir en WhatsApp
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ejemplo.com" target="_blank" class="share-option">
+                <i class="fab fa-facebook"></i> Compartir en Facebook
+            </a>
+        </div>
+        
         <div class="header">
             <div class="logo">
                 <div class="logo-line1">PERÚ</div>
@@ -313,14 +410,14 @@
             </div>
             
             <div class="locations">
-                <div class="location">
+                <a href="https://maps.google.com/?q=Av.+Brucelas,+Salamanca+28028+Madrid" target="_blank" class="location">
                     <div class="location-icon">📍</div>
                     <div>Av. Brucelas, Salamanca 28028 Madrid</div>
-                </div>
-                <div class="location">
+                </a>
+                <a href="https://maps.google.com/?q=Metro+Parque+de+Las+Avenidas+Madrid" target="_blank" class="location">
                     <div class="location-icon">📍</div>
                     <div>Metro Parque de Las Avenidas</div>
-                </div>
+                </a>
             </div>
         </div>
         
@@ -330,35 +427,35 @@
                 <span>✨Sabores que cuentan historias</span>
             </div>
             
-            <div class="social-title">Consultas y Pedidos</div>
+            <div class="social-title">Nuestras Redes Sociales</div>
             
             <div class="social-links">
                 <a href="https://wa.me/34631544295" target="_blank" class="social-link">
                     <div class="social-icon whatsapp">
                         <i class="fab fa-whatsapp"></i>
                     </div>
-                    <div class="social-text">Whatsapp</div>
+                    <div class="social-text">WhatsApp: +34 631 544 295</div>
                 </a>
                 
                 <a href="https://www.instagram.com/perusucre_/" target="_blank" class="social-link">
                     <div class="social-icon instagram">
                         <i class="fab fa-instagram"></i>
                     </div>
-                    <div class="social-text">Instagram</div>
+                    <div class="social-text">Instagram: @perusucre_</div>
                 </a>
                 
                 <a href="https://www.tiktok.com/@perusucre?lang=es" target="_blank" class="social-link">
                     <div class="social-icon tiktok">
                         <i class="fab fa-tiktok"></i>
                     </div>
-                    <div class="social-text">TikTok</div>
+                    <div class="social-text">TikTok: @perusucre</div>
                 </a>
                 
                 <a href="https://facebook.com/tupagina" target="_blank" class="social-link">
                     <div class="social-icon facebook">
                         <i class="fab fa-facebook-f"></i>
                     </div>
-                    <div class="social-text">Facebook</div>
+                    <div class="social-text">Facebook: Peru Sucre</div>
                 </a>
             </div>
         </div>
@@ -367,5 +464,33 @@
             Síguenos en todas nuestras redes sociales
         </div>
     </div>
+
+    <script>
+        function toggleShareTooltip() {
+            const tooltip = document.getElementById('shareTooltip');
+            tooltip.classList.toggle('show');
+        }
+        
+        function copyLink() {
+            // En un sitio real, aquí pondrías tu URL real
+            const dummyLink = "https://perusucre.com";
+            navigator.clipboard.writeText(dummyLink).then(() => {
+                alert('Enlace copiado: ' + dummyLink);
+                document.getElementById('shareTooltip').classList.remove('show');
+            });
+        }
+        
+        // Cerrar el tooltip al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            const tooltip = document.getElementById('shareTooltip');
+            const shareButton = document.querySelector('.share-button');
+            
+            if (tooltip.classList.contains('show') && 
+                !tooltip.contains(e.target) && 
+                !shareButton.contains(e.target)) {
+                tooltip.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
