@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☕ Peru Sucre - Redes Sociales</title>
+    <meta name="description" content="Peru Sucre Bakery & Coffee - Sabores que cuentan historias. Ubicados en Madrid. Síguenos en todas nuestras redes sociales.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #d5ba98;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(to bottom, #aa7444, #bb8c65);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #7a5c3c 0%, #5c4122 100%);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid #d4af37;
+        }
+        
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-line1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-line2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #f8d568;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-line3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-top: 12px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo-line3:before, .logo-line3:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background: #d4af37;
+        }
+        
+        .logo-line3:before {
+            left: -40px;
+        }
+        
+        .logo-line3:after {
+            right: -40px;
+        }
+        
+        .locations {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .location {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .location:last-child {
+            margin-bottom: 0;
+        }
+        
+        .location-icon {
+            margin-right: 10px;
+            color: #d4af37;
+            font-size: 16px;
+            margin-top: 3px;
+        }
+        
+        .content {
+            padding: 30px 25px;
+        }
+        
+        .slogan {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .slogan i {
+            margin-right: 12px;
+            color: #ffffff;
+            font-size: 24px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slogan span {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 18px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-title {
+            text-align: center;
+            margin: 30px 0 20px;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #d4af37, #ffffff);
+            border-radius: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #5c4122;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: #f8f8f8;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp { background-color: #25D366; }
+        .instagram { background-color: #E4405F; }
+        .tiktok { background-color: #000000; }
+        .facebook { background-color: #1877F2; }
+        
+        .social-text {
+            color: #5c4122;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            font-weight: 500;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .logo-line1 {
+                font-size: 32px;
+            }
+            
+            .logo-line2 {
+                font-size: 40px;
+            }
+            
+            .logo-line3 {
+                font-size: 16px;
+                letter-spacing: 3px;
+            }
+            
+            .logo-line3:before, .logo-line3:after {
+                width: 20px;
+            }
+            
+            .logo-line3:before {
+                left: -30px;
+            }
+            
+            .logo-line3:after {
+                right: -30px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .social-link {
+                padding: 15px 20px;
+            }
+            
+            .locations {
+                padding: 12px;
+            }
+            
+            .location {
+                font-size: 13px;
+            }
+            
+            .slogan span {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-line1">PERÚ</div>
+                <div class="logo-line2">SUCRE</div>
+                <div class="logo-line3">BAKERY & COFFEE</div>
+            </div>
+            
+            <div class="locations">
+                <div class="location">
+                    <div class="location-icon">📍</div>
+                    <div>Av. Brucelas, Salamanca 28028 Madrid</div>
+                </div>
+                <div class="location">
+                    <div class="location-icon">📍</div>
+                    <div>Metro Parque de Las Avenidas</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="slogan">
+                <i class="fas fa-star"></i>
+                <span>✨Sabores que cuentan historias</span>
+            </div>
+            
+            <div class="social-title">Consultas y Pedidos</div>
+            
+            <div class="social-links">
+                <a href="https://wa.me/34631544295" target="_blank" class="social-link">
+                    <div class="social-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-text">Whatsapp</div>
+                </a>
+                
+                <a href="https://www.instagram.com/perusucre_/" target="_blank" class="social-link">
+                    <div class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-text">Instagram</div>
+                </a>
+                
+                <a href="https://www.tiktok.com/@perusucre?lang=es" target="_blank" class="social-link">
+                    <div class="social-icon tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="social-text">TikTok</div>
+                </a>
+                
+                <a href="https://facebook.com/tupagina" target="_blank" class="social-link">
+                    <div class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-text">Facebook</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Síguenos en todas nuestras redes sociales
+        </div>
+    </div>
+</body>
+</html>
